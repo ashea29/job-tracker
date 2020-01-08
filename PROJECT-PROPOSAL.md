@@ -1,33 +1,38 @@
-# Project Overview
+# ProspectTracker
 
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+A simple job search tracker app, built with React
 
 ## Project Links
 
-- [github repo]()
+- [github repo](https://git.generalassemb.ly/ashea27/job-tracker)
 - [deployment]()
 
 ## Wireframes
 
-Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
-
-- [wireframes]()
-- [react architecture]()
+- [Main](https://res.cloudinary.com/ashea27/image/upload/v1578420668/seir-1118_project2/User_Home_cjhi1u.png)
+- [Modal-Overlay](https://res.cloudinary.com/ashea27/image/upload/v1578420703/seir-1118_project2/Modal-Overlay_oyvwhh.png)
+- [ProspectDetails](https://res.cloudinary.com/ashea27/image/upload/v1578420689/seir-1118_project2/ProspectDetails_hy4jal.png)
+- [react architecture](https://res.cloudinary.com/ashea27/image/upload/v1578420596/seir-1118_project2/React_Architecture_Overview_usrhqc.png)
 
 
 ### MVP/PostMVP
 
 #### MVP
-- Find and use external api 
-- Render data on page 
-- Allow user to interact with the page
+- Main user page where a user can see all their current job contacts (called 'prospects' in-app)
+- User can create new prospects
+- User can click on each prospect and open a page displaying detailed information
+- User can see a map showing the location of the company (Google Maps API)
+- User can create a to-do list for each prospect
 
 #### PostMVP
 
-- Add localStorage or firebase for storage
+- Add Firebase for data persistence and Google Authentication
+- Allow user to get directions to the company in-app (via Google Directions API)
+- Allow user to add any relevant events for a prospect to their Google Calendar
+- Render an aggregated list of To-Do's for all prospects on the main user page
 
 
 ## Time Frames
