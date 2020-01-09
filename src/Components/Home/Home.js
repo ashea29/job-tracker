@@ -7,23 +7,18 @@ class Home extends Component {
   
   render() {
     const allProspects = this.props.prospects.map((currentProspect, index) => (
-      <div className='home-container'>
         <div className='card' key={index}>
-          <Link to={'/prospects/' + currentProspect.companyName}>
-              <i class="far fa-address-card"></i>
+          <Link id='home-page' to={'/prospects/' + currentProspect.companyName}>
+              <i className="far fa-address-card"></i>
               <span>{' '}{currentProspect.companyName}</span>
+              <h4>{currentProspect.jobAppliedFor}</h4>
           </Link>
         </div>
-      </div>
-      
     ))
 
     return(
-      <div style={{marginLeft: '50px'}}>
-        <div className="section-heading">
-          <h1>Prospects</h1>
-        </div>
-        <div>
+      <div id='prospect-container'>
+        <div id='all-prospects'>
           {allProspects}
         </div>
       </div>
