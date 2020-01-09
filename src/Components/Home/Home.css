@@ -1,0 +1,25 @@
+.card{
+  border: 2px solid black;
+  border-radius: 7px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 20px;
+  width: 300px;
+  vertical-align: middle;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+  width: 300px;
+}
+
+i{
+  font-size: 50px;
+}
+
+span{
+  font-size: 35px;
+}
