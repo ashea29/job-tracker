@@ -1,0 +1,51 @@
+#outer-container{
+  border: 3px solid green
+}
+
+#grid-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 75vw;
+  height: 80vh;
+  margin: 80px auto;
+  /* border: 2px solid red; */
+}
+
+.prospect-info{
+  grid-column: 1;
+  margin-left: 50px;
+}
+
+#show-page{
+  text-decoration: underline;
+}
+
+p{
+  font-weight: bold;
+}
+
+.no-bold{
+  font-weight: normal;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.back-button{
+  border: 2px solid #422132;
+  border-radius: 5px;
+  padding: 5px 15px;
+  width: 40px;
+  margin-top: 40px;
+  margin-left: 120px;
+}
+
+a{
+  text-decoration: none;
+  color: #422132;
+}
+
+#map{
+  grid-column: 2;
+  height: '400px';
+  width: '600px';
+}
