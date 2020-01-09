@@ -14,7 +14,7 @@ A simple job search tracker app, built with React
 
 - [Main](https://res.cloudinary.com/ashea27/image/upload/v1578420668/seir-1118_project2/User_Home_cjhi1u.png)
 - [Modal-Overlay](https://res.cloudinary.com/ashea27/image/upload/v1578420703/seir-1118_project2/Modal-Overlay_oyvwhh.png)
-- [ProspectDetails](https://res.cloudinary.com/ashea27/image/upload/v1578420689/seir-1118_project2/ProspectDetails_hy4jal.png)
+- [ProspectDetails](https://res.cloudinary.com/ashea27/image/upload/v1578584105/seir-1118_project2/ProspectDetails_xlip35.png)
 - [react architecture](https://res.cloudinary.com/ashea27/image/upload/v1578420596/seir-1118_project2/React_Architecture_Overview_usrhqc.png)
 
 
