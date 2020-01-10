@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import ProspectInfo from '../ProspectInfo/ProspectInfo'
 import Map from '../Map/Map'
 
-
 import './ProspectDetails.css'
+import '../Map/Map.css'
 
 
 class ProspectDetails extends Component {
@@ -25,7 +25,7 @@ class ProspectDetails extends Component {
         <div id='grid-container'>
           <ProspectInfo identifier={thisCompany}/>
 
-          <div id='map' style={{height: '400px', width: '600px'}}>
+          <div id='map'>
             <Map lat={thisCompany.lat} lng={thisCompany.lng}/>
           </div>
           
