@@ -21,14 +21,14 @@ A simple job search tracker app, built with React
 ### MVP/PostMVP
 
 #### MVP
-- Main user page where a user can see all their current job contacts (called 'prospects' in-app)
-- User can create new prospects
+- Main page where a user can see all their current job contacts (called 'prospects' in-app)
 - User can click on each prospect and open a page displaying detailed information
 - User can see a map showing the location of the company (Google Maps API)
-- User can create a to-do list for each prospect
+
 
 #### PostMVP
-
+- User can create new prospects that are added to main page
+- User can create a to-do list for each prospect
 - Add Firebase for data persistence and Google Authentication
 - Allow user to get directions to the company in-app (via Google Directions API)
 - Allow user to add any relevant events for a prospect to their Google Calendar
@@ -37,10 +37,17 @@ A simple job search tracker app, built with React
 
 ## Time Frames
 
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
-
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Home Component | H | 3hrs| 3.5hrs | 3.5hrs |
+| ProspectDetails Component | H | 3hrs| 3.5hrs | 3.5hrs |
+| Working with API | H | 4hrs| 5hrs | 5hrs |
+| CreateProspect Component | H | 3hrs| 3hrs | 3hrs |
+| CreateForm Component | H | 2hrs| 1.5hrs | 1.5hrs |
+| Other Components / Restructuring | H | 3hrs| 3hrs | 3hrs |
+| Styling | H | 4hrs| 3.5hrs | 3.5hrs |
+| Total |  | 22hrs| 23hrs | 5hrs |
+
+All time frames include research, setting up Routes, and some basic styling along the way.
+
+In addition, the large amounts of time for some of these items, as well as the overages, were due to several extenuating circumstances. I have tried to account for all these the best that I can in filling out the table above.

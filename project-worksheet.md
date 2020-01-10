@@ -1,76 +1,89 @@
-# Project Overview
+# ProspectTracker
 
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+A simple job search tracker app, built with React
 
 ## Project Links
 
-- [github repo]()
+- [github repo](https://git.generalassemb.ly/ashea27/job-tracker)
 - [deployment]()
 
 ## Wireframes
 
-Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
+- [Home](https://res.cloudinary.com/ashea27/image/upload/v1578684041/seir-1118_project2/Home_d2zgnr.png)
+- [CreateProspect](https://res.cloudinary.com/ashea27/image/upload/v1578684064/seir-1118_project2/CreateProspect_swxxqz.png)
+- [ProspectDetails](https://res.cloudinary.com/ashea27/image/upload/v1578684091/seir-1118_project2/ProspectDetails_e2liaa.png)
+- [React architecture](https://res.cloudinary.com/ashea27/image/upload/v1578684491/seir-1118_project2/React_Architecture_Overview_g7jgzj.png)
 
-- [wireframes]()
-- [react architecture]()
+
+### MVP/PostMVP
+
+#### MVP
+- Main page where a user can see all their current job contacts (called 'prospects' in-app)
+- User can click on each prospect and open a page displaying detailed information
+- User can see a map showing the location of the company (Google Maps API)
 
 
+#### PostMVP
+- User can create new prospects that are added to main page
+- User can create a to-do list for each prospect
+- Add Firebase for data persistence and Google Authentication
+- Allow user to get directions to the company in-app (via Google Directions API)
+- Allow user to add any relevant events for a prospect to their Google Calendar
+- Render an aggregated list of To-Do's for all prospects on the main user page
 
-Define the the React components and the architectural design of your app.
-
-### MVP/PostMVP - 5min
-
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
-
-#### MVP EXAMPLE
-- Find and use external api 
-- Render data on page 
-- Allow user to interact with the page
-
-#### PostMVP EXAMPLE
-
-- Add localStorage or firebase for storage
-
-## Components
-##### Writing out your components and its descriptions isn't a required part of the proposal but can be helpful.
-
-Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components. 
-
-| Component | Description | 
-| --- | :---: |  
-| App | This will make the initial data pull and include React Router| 
-| Header | This will render the header include the nav | 
-| Footer | This will render the header include the nav | 
 
 ## Time Frames
 
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
-
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Home Component | H | 3hrs| 3.5hrs | 3.5hrs |
+| ProspectDetails Component | H | 3hrs| 3.5hrs | 3.5hrs |
+| Working with API | H | 4hrs| 5hrs | 5hrs |
+| CreateProspect Component | H | 3hrs| 3hrs | 3hrs |
+| CreateForm Component | H | 2hrs| 1.5hrs | 1.5hrs |
+| Other Components / Restructuring | H | 3hrs| 3hrs | 3hrs |
+| Styling | H | 4hrs| 3.5hrs | 3.5hrs |
+| Total |  | 22hrs| 23hrs | 5hrs |
+
+All time frames include research, setting up Routes, and some basic styling along the way.
+
+In addition, the large amounts of time for some of these items, as well as the overages, were due to several extenuating circumstances. I have tried to account for all these the best that I can in filling out the table above.
 
 ## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project such as Axios, ReactStrap, D3, etc. 
+
+FontAwesome for icons
+
+ Other than that, there were nitially two 3rd party NPM packages, but in the current build there are none.
 
 ## Code Snippet
 
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description.  Code snippet should not be greater than 10 lines of code. 
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+class Map extends Component{
+  componentDidMount(){
+    this.mapDataFetch()
+  }
+
+  mapDataFetch = () => {
+    loadScript(`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_MAPS_KEY}&callback=initMap`)
+    window.initMap = this.initMap
+  }
+  
+  initMap = () => {
+    const thisPosition = {lat: this.props.lat, lng: this.props.lng}
+    const map = new window.google.maps.Map(document.getElementById('map'), {
+      center: thisPosition,
+      zoom: 14
+    })
+
+    const marker = new window.google.maps.Marker({position: thisPosition, map: map})
+    console.log(marker)
+  }
 ```
 
 ## Issues and Resolutions
- Use this section to list of all major issues encountered and their resolution.
-
-#### SAMPLE.....
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
-**RESOLUTION**: Missing comma after first object in sources {} object
+ I encountered issues mostly in trying to configure the Google Maps API to work in React (which is why the 3rd party NPM packages were brought in). When these proved not to solve the problem, I scrapped them and did more research until I came upon the answer in a YouTube tutorial, which showed how to implement a map in plain React.
