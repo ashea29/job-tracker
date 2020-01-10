@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import { Link, Route } from 'react-router-dom'
-import prospects from './data/AllProspects'
+import { Route } from 'react-router-dom'
+import Navbar from './Components/Navbar/Navbar'
 import ProspectDetails from './Components/ProspectDetails/ProspectDetails'
 import Home from './Components/Home/Home'
 import CreateProspect from './Components/CreateProspect/CreateProspect';
+import prospects from './data/AllProspects'
 import './App.css';
 
 
@@ -22,10 +23,7 @@ class App extends Component {
     return (
       <div>
         <header>
-          <nav>
-            <h1 id='title'>PROSPECT TRACKER</h1>
-            <Link to="/create-new-prospect"><h3 id='create-button'>Create New Prospect</h3></Link>
-          </nav>
+          <Navbar />
         </header>
         
         <Route 

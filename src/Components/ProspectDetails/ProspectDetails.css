@@ -1,23 +1,15 @@
-#outer-container{
-  border: 3px solid green
-}
-
 #grid-container{
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 75vw;
   height: 80vh;
   margin: 80px auto;
-  /* border: 2px solid red; */
 }
 
 .prospect-info{
   grid-column: 1;
   margin-left: 50px;
-}
-
-#show-page{
-  text-decoration: underline;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 p{
