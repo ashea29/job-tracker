@@ -15,12 +15,14 @@ input{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-style: italic;
   margin: 5px;
+  padding-left: 10px;
 }
 
 
 h2{
   color: #422132;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-left: 5px;
 }
 
 .submit-button{

@@ -27,7 +27,7 @@ const CreateForm = () => {
         <h2>Create A New Prospect!</h2>
         <input
           type="text"
-          placeholder=" Company Name"
+          placeholder="Company Name"
           name="companyName"
           value={companyName}
           onChange={onChange}
