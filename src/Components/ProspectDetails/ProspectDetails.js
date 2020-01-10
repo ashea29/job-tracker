@@ -1,19 +1,21 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import ProspectMap from '../Map/Map'
+import Map from '../Map/Map'
+
 
 import './ProspectDetails.css'
 
 
 class ProspectDetails extends Component {
   render() {
+    console.log(this.props)
     const companyName = this.props.match.params.companyName;
     const thisCompany = this.props.prospects.find((thisCompany) => {
       return (
         thisCompany.companyName === companyName
       )
     })
-    
+
     return (
       <div id="outer-container">
         <div className='back-button'>
@@ -43,16 +45,17 @@ class ProspectDetails extends Component {
               <span className='no-bold'>{thisCompany.github}</span>
             </p>
           </div>
-          
+
           <div id='map' style={{height: '400px', width: '600px'}}>
-            <ProspectMap />
-          
+            <Map lat={thisCompany.lat} lng={thisCompany.lng}/>
           </div>
+          
         </div>
       </div>
     )
   }
 }
+
 
 
 export default ProspectDetails

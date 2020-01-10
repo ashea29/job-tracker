@@ -4,8 +4,7 @@ import './Home.css'
 
 
 class Home extends Component {
-  
-  render() {
+  render() {  
     const allProspects = this.props.prospects.map((currentProspect, index) => (
         <div className='card' key={index}>
           <Link id='home-page' to={'/prospects/' + currentProspect.companyName}>
