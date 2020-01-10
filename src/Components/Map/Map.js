@@ -31,6 +31,7 @@ class Map extends Component{
     })
 
     const marker = new window.google.maps.Marker({position: thisPosition, map: map})
+    console.log(marker)
   }
 
   render() {
