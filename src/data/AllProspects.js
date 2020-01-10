@@ -22,7 +22,7 @@ const prospects = [
     github: "gitHubUrl.com"
   },
   {
-    companyName: "CompanyThree",
+    companyName: 'CompanyThree',
     address: "1380 Forest Park Circle, Lafayette, CO",
     lat: 40.014090,
     lng: -105.126890,
@@ -55,12 +55,6 @@ const prospects = [
     github: "gitHubUrl.com"
   }
 ]
-
-
-
-
-
-
 
 
 export default prospects

@@ -28,9 +28,18 @@ class App extends Component {
           </nav>
         </header>
         
-        <Route path='/create-new-prospect' exact component={CreateProspect}/>
-        <Route path="/" exact render={props => <Home {...props} prospects={this.state.prospects}/>} />
-        <Route path="/prospects/:companyName" render={props => <ProspectDetails {...props} prospects={this.state.prospects}/>}/> 
+        <Route 
+          path='/create-new-prospect' exact 
+          render={props => <CreateProspect {...props} 
+          prospects={this.state.prospects}/>} />
+
+        <Route path="/" exact 
+          render={props => <Home {...props} 
+          prospects={this.state.prospects}/>} />
+
+        <Route path="/prospects/:companyName" 
+          render={props => <ProspectDetails {...props} 
+          prospects={this.state.prospects}/>} /> 
 
       </div>
     )
