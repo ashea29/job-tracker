@@ -13,14 +13,6 @@ FOR DEMONSTRATING HOW TO USE THE GOOGLE MAPS API IN REACT WITHOUT HAVING TO UTIL
 import React, { Component } from 'react'
 
 
-let mapsKey
-
-if (process.env.NODE_ENV !== 'production') {
-  mapsKey = process.env.REACT_APP_MAPS_KEY
-} else {
-  mapsKey = process.env.MAPS_KEY
-}
-
 
 class Map extends Component{
   componentDidMount(){
@@ -28,7 +20,7 @@ class Map extends Component{
   }
 
   mapDataFetch = () => {
-    loadScript(`https://maps.googleapis.com/maps/api/js?key=${mapsKey}&callback=initMap`)
+    loadScript(`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_MAPS_KEY}&callback=initMap`)
     window.initMap = this.initMap
   }
   
