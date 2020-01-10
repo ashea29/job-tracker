@@ -7,6 +7,7 @@ import CreateProspect from './Components/CreateProspect/CreateProspect';
 import './App.css';
 
 
+console.log(prospects)
 
 class App extends Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class App extends Component {
       prospects: prospects
     };
   }
+
 
   render() {
     return (

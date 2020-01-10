@@ -1,34 +1,53 @@
-import React from 'react'
-import { GoogleMap, withScriptjs, withGoogleMap, Marker } from 'react-google-maps'
+/* 
+
+MANY THANKS TO THE FOLLOWING RESOURCE:
+
+    https://www.youtube.com/watch?v=W5LhLZqj76s
+    A YouTube video posted by Yahya Elharony
+
+FOR DEMONSTRATING HOW TO USE THE GOOGLE MAPS API IN REACT WITHOUT HAVING TO UTILIZE A 3RD-PARTY NPM PACKAGE! THIS FINALLY ALLOWED ME TO PASS 'LAT' & 'LNG' PROPS TO THE MAP COMPONENT, AND ULTIMATELY MADE EVERYTHING WORK.
+
+*/
 
 
+import React, { Component } from 'react'
 
-function Map(){
-  return(
-    <GoogleMap 
-      id='map' 
-      defaultZoom={14} 
-      defaultCenter={{lat: 39.739235, lng: -104.990250}}>
 
-      <Marker position={{lat: 39.739235, lng: -104.990250}}/>
-    
-    </GoogleMap>
+class Map extends Component{
+  componentDidMount(){
+    this.mapDataFetch()
+  }
 
-    
-  )
+  mapDataFetch = () => {
+    loadScript(`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_MAPS_KEY}&callback=initMap`)
+    window.initMap = this.initMap
+  }
+  
+  initMap = () => {
+    const thisPosition = {lat: this.props.lat, lng: this.props.lng}
+    const map = new window.google.maps.Map(document.getElementById('map'), {
+      center: thisPosition,
+      zoom: 14
+    })
+
+    const marker = new window.google.maps.Marker({position: thisPosition, map: map})
+  }
+
+  render() {
+    return(
+      <div id="map"></div>
+    )
+  }
 }
 
-const MapComponent = withScriptjs(withGoogleMap(Map))
 
-
-export default function ProspectMap() {
-  // console.log('this is key from inside mapJS', process.env)
-  return (
-    <MapComponent
-      googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_MAPS_KEY}`}
-      loadingElement={<div style={{height: "100%"}}/>}
-      containerElement={<div style={{height: "100%"}}/>}
-      mapElement={<div style={{height: "100%"}}/>}
-    />
-  )
+function loadScript(url) {
+  const index = window.document.getElementsByTagName('script')[0]
+  const script = window.document.createElement('script')
+  script.src = url
+  script.async = true
+  script.defer = true
+  index.parentNode.insertBefore(script, index)
 }
+
+export default Map
